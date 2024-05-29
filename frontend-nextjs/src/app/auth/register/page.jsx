@@ -1,15 +1,18 @@
 "use client";
-
 import { KeyRound } from "lucide-react";
 import React from "react";
 import { useFormState } from "react-dom";
 // actions
 import { register } from "@/actions/Register";
+import { toast } from "react-toastify";
 
 export default function Register() {
   const [state, formAction] = useFormState(register, {});
-//   console.log(state?.error);
+  //   console.log(state?.error);
 
+  if (state?.error) {
+    toast.error(state?.error);
+  }
 
   return (
     <div className="flex items-center justify-center h-screen mx-auto ">
