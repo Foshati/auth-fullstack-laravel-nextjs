@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <div>
@@ -25,7 +27,7 @@ export default function Header() {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <Link href="/">Home</Link>
               </li>
             </ul>
           </div>
@@ -34,13 +36,17 @@ export default function Header() {
         <div className="hidden navbar-center lg:flex">
           <ul className="px-1 menu menu-horizontal">
             <li>
-              <a>Home</a>
+              <Link href="/">Home</Link>
             </li>
           </ul>
         </div>
         <div className="gap-4 navbar-end ">
-          <a className="btn">sing in</a>
-          <a className="btn">sing up</a>
+          <Link href="/auth/login" className="btn">
+            Log in
+          </Link>
+          <Link href="/auth/register" className="btn">
+            Register
+          </Link>
         </div>
       </div>
     </div>
