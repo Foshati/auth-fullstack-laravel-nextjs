@@ -4,7 +4,7 @@ import React from "react";
 import { useFormState } from "react-dom";
 // actions
 import { register } from "@/actions/Register";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 export default function Register() {
   const [state, formAction] = useFormState(register, {});
