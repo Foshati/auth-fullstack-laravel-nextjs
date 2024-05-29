@@ -5,6 +5,7 @@ import { useFormState } from "react-dom";
 // actions
 import { register } from "@/actions/Register";
 import { toast } from "react-hot-toast";
+import SubButton from "@/components/subButton/SubButton";
 
 export default function Register() {
   const [state, formAction] = useFormState(register, {});
@@ -76,7 +77,7 @@ export default function Register() {
           />
         </label>
 
-        <button className="btn btn-wide">Register</button>
+        <SubButton title={"Register"} />
       </form>
     </div>
   );
