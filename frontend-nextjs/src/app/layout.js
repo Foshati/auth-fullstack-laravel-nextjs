@@ -2,8 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
-
-import { ToastContainer } from "react-toastify";
+import Toastify from "@/components/toastify/Toastify";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,9 +16,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main className="flex flex-col min-h-screen">
           <Header />
-          <div className="flex-1 ">{children}</div>
+          <div className="flex-1 ">
+            {children}
+            <Toastify />
+          </div>
           <Footer />
-          <ToastContainer />
         </main>
       </body>
     </html>
