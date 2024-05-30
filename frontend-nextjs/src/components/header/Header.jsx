@@ -1,6 +1,11 @@
+"use client";
+import { AuthContext } from "@/context/AuthContext";
 import Link from "next/link";
+import { useContext } from "react";
 
 export default function Header() {
+  const { user } = useContext(AuthContext);
+  //? console.log(user);
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -40,13 +45,23 @@ export default function Header() {
             </li>
           </ul>
         </div>
+        {/* navbar-end  */}
         <div className="gap-4 navbar-end ">
-          <Link href="/auth/login" className="btn">
-            Log in
-          </Link>
-          <Link href="/auth/register" className="btn">
-            Register
-          </Link>
+          {user ? (
+            <>
+              <span>{user.name}</span>
+              <button className="btn">log out</button>
+            </>
+          ) : (
+            <>
+              <Link href="/auth/login" className="btn">
+                Log in
+              </Link>
+              <Link href="/auth/register" className="btn">
+                Register
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

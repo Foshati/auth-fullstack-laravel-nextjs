@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import HotToast from "@/components/hotToast/HotToast";
+import { AuthProvider } from "@/context/AuthContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -14,14 +15,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex flex-col min-h-screen">
-          <Header />
-          <div className="flex-1 ">
-            {children}
-            <HotToast />
-          </div>
-          <Footer />
-        </main>
+        <AuthProvider>
+          <main className="flex flex-col min-h-screen">
+            <Header />
+            <div className="flex-1 ">
+              {children}
+              <HotToast />
+            </div>
+            <Footer />
+          </main>
+        </AuthProvider>
       </body>
     </html>
   );

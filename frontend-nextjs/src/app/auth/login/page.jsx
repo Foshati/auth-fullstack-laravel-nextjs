@@ -7,15 +7,19 @@ import { login } from "@/actions/Register";
 import { toast } from "react-hot-toast";
 import SubButton from "@/components/subButton/SubButton";
 import { useRouter } from "next/navigation";
+import { useContext } from "react";
+import { AuthContext } from "@/context/AuthContext";
 
 export default function Register() {
   const [state, formAction] = useFormState(login, {});
   const router = useRouter();
+  const { loginContext } = useContext(AuthContext);
   useEffect(() => {
     if (state?.error) {
       toast.error(state?.error);
     } else if (state?.success) {
       toast.success(state?.success);
+      loginContext(state?.user);
       router.push("/");
     }
   }, [state, router]);

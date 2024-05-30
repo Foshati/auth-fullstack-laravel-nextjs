@@ -91,6 +91,7 @@ async function login(state, formData) {
     });
     return {
       success: "you are logged in",
+      user: data.user,
     };
   } else {
     return {
