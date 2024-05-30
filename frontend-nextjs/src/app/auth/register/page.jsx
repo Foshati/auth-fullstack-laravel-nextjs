@@ -1,19 +1,24 @@
 "use client";
 import { KeyRound } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormState } from "react-dom";
 // actions
 import { register } from "@/actions/Register";
 import { toast } from "react-hot-toast";
 import SubButton from "@/components/subButton/SubButton";
+import { useRouter } from "next/navigation";
 
 export default function Register() {
   const [state, formAction] = useFormState(register, {});
-  //   console.log(state?.error);
-
-  if (state?.error) {
-    toast.error(state?.error);
-  }
+  const router = useRouter();
+  useEffect(() => {
+    if (state?.error) {
+      toast.error(state?.error);
+    } else if (state?.success) {
+      toast.success(state?.success);
+      router.push("/");
+    }
+  }, [state, router]);
 
   return (
     <div className="flex items-center justify-center h-screen mx-auto ">
@@ -57,7 +62,7 @@ export default function Register() {
         </label>
 
         <label className="flex items-center gap-2 input input-bordered">
-          <KeyRound className="size-4" fill />
+          <KeyRound className="size-4" />
           <input
             type="password"
             className="grow"
@@ -68,7 +73,6 @@ export default function Register() {
 
         <label className="flex items-center gap-2 input input-bordered">
           <KeyRound className=" size-4" />
-          {/* className fill-current */}
           <input
             type="password"
             className="grow"
