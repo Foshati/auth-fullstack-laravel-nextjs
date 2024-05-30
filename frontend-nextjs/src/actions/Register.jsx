@@ -100,4 +100,16 @@ async function login(state, formData) {
   }
 }
 
-export { register, login };
+async function authentication() {
+  const token = cookies().get("token");
+  const res = await fetch("http://127.0.0.1:8000/api/me", {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token.value}`,
+    },
+  });
+  const data = await res.json();
+  //? console.log(data , "response token in server");
+}
+
+export { register, login, authentication };
