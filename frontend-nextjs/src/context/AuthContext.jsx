@@ -16,7 +16,12 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkUserLoggedIn = async () => {
       const data = await authentication();
-      //?   console.log(data, "From Context");
+      //?   console.log(data?.user, "From Context data.user");
+      if (data?.error) {
+        setUser(null);
+      } else {
+        setUser(data?.user);
+      }
     };
     checkUserLoggedIn();
   }, []);

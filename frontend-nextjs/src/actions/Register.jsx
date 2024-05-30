@@ -102,6 +102,12 @@ async function login(state, formData) {
 
 async function authentication() {
   const token = cookies().get("token");
+
+  if (!token) {
+    return {
+      error: "Not Authorized",
+    };
+  }
   const res = await fetch("http://127.0.0.1:8000/api/me", {
     method: "GET",
     headers: {
@@ -109,7 +115,16 @@ async function authentication() {
     },
   });
   const data = await res.json();
-  //? console.log(data , "response token in server");
+  //? console.log(data.user , "response token in server");
+  if (res.ok) {
+    return {
+      user: data.user,
+    };
+  } else {
+    return {
+      error: "User Forbidden",
+    };
+  }
 }
 
 export { register, login, authentication };
