@@ -16,7 +16,7 @@ export default function Register() {
       toast.error(state?.error);
     } else if (state?.success) {
       toast.success(state?.success);
-      router.push("/");
+      router.push("/auth/login");
     }
   }, [state, router]);
 
