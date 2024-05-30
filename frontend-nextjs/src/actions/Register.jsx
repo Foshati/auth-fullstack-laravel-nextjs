@@ -110,8 +110,10 @@ async function authentication() {
   }
   const res = await fetch("http://127.0.0.1:8000/api/me", {
     method: "GET",
+    cache: "no-store",
     headers: {
       Authorization: `Bearer ${token.value}`,
+      Accept: "application/json",
     },
   });
   const data = await res.json();
@@ -127,4 +129,27 @@ async function authentication() {
   }
 }
 
-export { register, login, authentication };
+async function logout() {
+  const token = cookies().get("token");
+
+  const res = await fetch("http://127.0.0.1:8000/api/logout", {
+    method: "POST",
+    cache: "no-store",
+    headers: {
+      Authorization: `Bearer ${token.value}`,
+      Accept: "application/json",
+    },
+  });
+  const data = await res.json();
+  if (res.ok) {
+    cookies().delete("token"); /* Important */
+    return {
+      success: "you are logged out",
+    };
+  } else {
+    return {
+      error: handleErrorServer(data),
+    };
+  }
+}
+export { register, login, authentication, logout };

@@ -12,6 +12,9 @@ export const AuthProvider = ({ children }) => {
   const loginContext = (user) => {
     setUser(user);
   };
+  const logoutContext = () => {
+    setUser(null);
+  };
 
   useEffect(() => {
     const checkUserLoggedIn = async () => {
@@ -27,7 +30,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, loginContext }}>
+    <AuthContext.Provider value={{ user, loginContext, logoutContext }}>
       {children}
     </AuthContext.Provider>
   );

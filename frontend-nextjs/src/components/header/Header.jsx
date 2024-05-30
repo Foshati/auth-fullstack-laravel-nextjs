@@ -1,10 +1,13 @@
 "use client";
+import { logout } from "@/actions/Register";
 import { AuthContext } from "@/context/AuthContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useContext } from "react";
 
 export default function Header() {
-  const { user } = useContext(AuthContext);
+  const { user, logoutContext } = useContext(AuthContext);
+  const Router = useRouter();
   //? console.log(user);
   return (
     <div>
@@ -50,7 +53,16 @@ export default function Header() {
           {user ? (
             <>
               <span>{user.name}</span>
-              <button className="btn">log out</button>
+              <button
+                onClick={async () => {
+                  await logout();
+                  logoutContext();
+                  Router.push("/");
+                }}
+                className="btn"
+              >
+                log out
+              </button>
             </>
           ) : (
             <>
