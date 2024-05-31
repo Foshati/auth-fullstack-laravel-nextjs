@@ -48,10 +48,34 @@ export default function Header() {
               </li>
               <li className="hover:text-red-500">
                 <Link
-                  href="/posts"
-                  className={pathname === "/posts" ? "text-red-500" : ""}
+                  href="/Blog"
+                  className={pathname === "/Blog" ? "text-red-500" : ""}
                 >
-                  Posts
+                  Blog
+                </Link>
+              </li>
+              <li className="hover:text-red-500">
+                <Link
+                  href="/contact"
+                  className={pathname === "/contact" ? "text-red-500" : ""}
+                >
+                  contact
+                </Link>
+              </li>
+              <li className="hover:text-red-500">
+                <Link
+                  href="/price"
+                  className={pathname === "/price" ? "text-red-500" : ""}
+                >
+                  Price
+                </Link>
+              </li>
+              <li className="hover:text-red-500">
+                <Link
+                  href="/about"
+                  className={pathname === "/about" ? "text-red-500" : ""}
+                >
+                  About
                 </Link>
               </li>
             </ul>
@@ -69,10 +93,34 @@ export default function Header() {
             </li>
             <li className="hover:text-red-500">
               <Link
-                href="/posts"
-                className={pathname === "/posts" ? "text-red-500" : ""}
+                href="/Blog"
+                className={pathname === "/Blog" ? "text-red-500" : ""}
               >
-                Posts
+                Blog
+              </Link>
+            </li>
+            <li className="hover:text-red-500">
+              <Link
+                href="/contact"
+                className={pathname === "/contact" ? "text-red-500" : ""}
+              >
+                contact
+              </Link>
+            </li>
+            <li className="hover:text-red-500">
+              <Link
+                href="/price"
+                className={pathname === "/price" ? "text-red-500" : ""}
+              >
+                Price
+              </Link>
+            </li>
+            <li className="hover:text-red-500">
+              <Link
+                href="/about"
+                className={pathname === "/about" ? "text-red-500" : ""}
+              >
+                About
               </Link>
             </li>
           </ul>

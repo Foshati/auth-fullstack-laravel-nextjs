@@ -1,24 +1,26 @@
+import Link from "next/link";
 export default function Home() {
   return (
     <main>
       <>
         {/*Hero*/}
         <div className="pt-24">
-          <div className="container flex flex-col flex-wrap items-center px-3 mx-auto md:flex-row">
+          <div className="container flex flex-col flex-wrap items-center px-3 mx-auto md:flex-row ">
             {/*Left Col*/}
             <div className="flex flex-col items-start justify-center w-full text-center md:w-2/5 md:text-left">
-              <p className="w-full uppercase tracking-loose">
-                Auth-Full-Stack{" "}
-              </p>
+              <p className="w-full uppercase tracking-loose">Auth-Full-Stack</p>
               <h1 className="my-4 text-5xl font-bold leading-tight">
                 Main Hero Message to sell yourself!
               </h1>
               <p className="mb-8 text-2xl leading-normal">
                 NextJs-TailwindCss-DaisyUi -Laravel-mySql
               </p>
-              <button className="px-8 py-4 mx-auto my-6 font-bold text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-full shadow-lg lg:mx-0 hover:underline focus:outline-none focus:shadow-outline hover:scale-105">
-                Subscribe
-              </button>
+              <Link
+                href="/posts"
+                className="px-8 py-4 mx-auto my-6 font-bold text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-full shadow-lg lg:mx-0 hover:underline focus:outline-none focus:shadow-outline hover:scale-105"
+              >
+                Get Started
+              </Link>
             </div>
             {/*Right Col*/}
             <div className="w-full py-6 text-center md:w-3/5">
@@ -80,14 +82,6 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                   <br />
-                  <br />
-                  Images from:
-                  <a
-                    className="text-pink-500 underline"
-                    href="https://undraw.co/"
-                  >
-                    undraw.co
-                  </a>
                 </p>
               </div>
               <div className="w-full p-6 sm:w-1/2">
@@ -531,14 +525,6 @@ export default function Home() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                     <br />
-                    <br />
-                    Images from:
-                    <a
-                      className="text-pink-500 underline"
-                      href="https://undraw.co/"
-                    >
-                      undraw.co
-                    </a>
                   </p>
                 </div>
               </div>
@@ -659,9 +645,12 @@ export default function Home() {
                     <span className="text-base">for one user</span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <button className="px-8 py-4 mx-auto my-6 font-bold text-white transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 hover:underline gradient focus:outline-none focus:shadow-outline hover:scale-105">
+                    <Link
+                      href="/auth/register"
+                      className="px-8 py-4 mx-auto my-6 font-bold text-white transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 hover:underline gradient focus:outline-none focus:shadow-outline hover:scale-105"
+                    >
                       Sign Up
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -684,9 +673,12 @@ export default function Home() {
                     <span className="text-base">/ per user</span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <button className="px-8 py-4 mx-auto my-6 font-bold text-white transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 hover:underline gradient focus:outline-none focus:shadow-outline hover:scale-105">
+                    <Link
+                      href="/auth/register"
+                      className="px-8 py-4 mx-auto my-6 font-bold text-white transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 hover:underline gradient focus:outline-none focus:shadow-outline hover:scale-105"
+                    >
                       Sign Up
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -707,9 +699,12 @@ export default function Home() {
                     <span className="text-base">/ per user</span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <button className="px-8 py-4 mx-auto my-6 font-bold text-white transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 hover:underline gradient focus:outline-none focus:shadow-outline hover:scale-105">
+                    <Link
+                      href="/auth/register"
+                      className="px-8 py-4 mx-auto my-6 font-bold text-white transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 hover:underline gradient focus:outline-none focus:shadow-outline hover:scale-105"
+                    >
                       Sign Up
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -7,7 +7,7 @@ export default function HotToast() {
   return (
     <div>
       <Toaster
-        position="top-center"
+        position="bottom-right"
         reverseOrder={false}
         toastOptions={{
           // Customize toast styles here
