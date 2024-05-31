@@ -141,7 +141,6 @@ export default function contact() {
             </div>
           </div>
         </section>
-        GitHub
       </>
     </div>
   );
