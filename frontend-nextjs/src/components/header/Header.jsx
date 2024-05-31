@@ -37,6 +37,9 @@ export default function Header() {
               <li>
                 <Link href="/">Home</Link>
               </li>
+              <li>
+                <Link href="/posts">Posts</Link>
+              </li>
             </ul>
           </div>
           <a className="text-xl btn btn-ghost">Auth-Full-Stack</a>
@@ -45,6 +48,9 @@ export default function Header() {
           <ul className="px-1 menu menu-horizontal">
             <li>
               <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/posts">Posts</Link>
             </li>
           </ul>
         </div>
