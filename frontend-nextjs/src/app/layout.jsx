@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import HotToast from "@/components/hotToast/HotToast";
 import { AuthProvider } from "@/context/AuthContext";
-const inter = Inter({ subsets: ["latin"] });
+const lexend = Lexend({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
   title: "NextJs-TailwindCss-DaisyUi -Laravel-mySql",
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lexend.className}>
         <AuthProvider>
           <main className="flex flex-col min-h-screen">
             <Header />

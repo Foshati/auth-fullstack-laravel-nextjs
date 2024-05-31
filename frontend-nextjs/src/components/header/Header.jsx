@@ -48,8 +48,8 @@ export default function Header() {
               </li>
               <li className="hover:text-red-500">
                 <Link
-                  href="/Blog"
-                  className={pathname === "/Blog" ? "text-red-500" : ""}
+                  href="/blog"
+                  className={pathname === "/blog" ? "text-red-500" : ""}
                 >
                   Blog
                 </Link>
@@ -59,7 +59,7 @@ export default function Header() {
                   href="/contact"
                   className={pathname === "/contact" ? "text-red-500" : ""}
                 >
-                  contact
+                  Contact
                 </Link>
               </li>
               <li className="hover:text-red-500">
@@ -93,8 +93,8 @@ export default function Header() {
             </li>
             <li className="hover:text-red-500">
               <Link
-                href="/Blog"
-                className={pathname === "/Blog" ? "text-red-500" : ""}
+                href="/blog"
+                className={pathname === "/blog" ? "text-red-500" : ""}
               >
                 Blog
               </Link>
@@ -104,7 +104,7 @@ export default function Header() {
                 href="/contact"
                 className={pathname === "/contact" ? "text-red-500" : ""}
               >
-                contact
+                Contact
               </Link>
             </li>
             <li className="hover:text-red-500">

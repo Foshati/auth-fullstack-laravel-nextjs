@@ -11,7 +11,7 @@ const getData = async () => {
   }
 };
 
-export default async function Posts() {
+export default async function Blogs() {
   const postsData = await getData();
 
   return (
