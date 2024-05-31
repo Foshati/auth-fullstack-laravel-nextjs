@@ -8,14 +8,13 @@ export default function Home() {
             {/*Left Col*/}
             <div className="flex flex-col items-start justify-center w-full text-center md:w-2/5 md:text-left">
               <p className="w-full uppercase tracking-loose">
-                What business are you?
+                Auth-Full-Stack{" "}
               </p>
               <h1 className="my-4 text-5xl font-bold leading-tight">
                 Main Hero Message to sell yourself!
               </h1>
               <p className="mb-8 text-2xl leading-normal">
-                Sub-hero message, not too long and not too short. Make it just
-                right!
+                NextJs-TailwindCss-DaisyUi -Laravel-mySql
               </p>
               <button className="px-8 py-4 mx-auto my-6 font-bold text-gray-800 transition duration-300 ease-in-out transform bg-white rounded-full shadow-lg lg:mx-0 hover:underline focus:outline-none focus:shadow-outline hover:scale-105">
                 Subscribe
